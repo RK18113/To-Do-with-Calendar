@@ -1,0 +1,800 @@
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: sans-serif;
+}
+
+.btn-container{
+    display: flex;
+    justify-content: space-between;
+    width: 10%;
+}
+
+.arrBtn{
+    height: 15px;
+    width: 15px;
+    border-top: 3.5px solid gray;
+    border-left: 3.5px solid gray;
+}
+
+.arrBtn:hover{
+    border-color: black;
+}
+
+.right{
+    transform: rotate(135deg);
+}
+
+.left{
+    transform: rotate(-45deg);
+}
+
+.master-container{
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.todo-background{
+    width: 30vw;
+    height: 100vh;
+    background-color: #36DBE5;
+}
+
+.date-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.5fr 1.5fr;
+    column-gap: 0.4vw;
+    width: 45%;
+    margin-left: 45%;
+    margin-top: 50px;
+    color: #ffffff;
+    font-family: Roboto;
+    font-size: 144px;
+    font-weight: 400;
+}
+
+.current-date{
+    grid-area: 1 / 1 / 3 / 2;
+    font-size: 6.25vw;
+    justify-self: end;
+}
+
+.current-month{
+    font-size: 2.25vw;
+    padding-top: 15%;
+    padding-bottom: 0%;
+}
+
+.current-year{
+    font-size: 2.25vw;
+    padding-top: 2%;
+}
+
+.today-deadline-box{
+    padding-top: 7%;
+    padding-left: 5%;
+    color: #364043;
+}
+
+.upcoming-deadline-box{
+    padding-top: 15%;
+    padding-left: 5%;
+}
+
+.title{
+    padding-bottom: 2%;
+    font-size: 2vw;
+    font-family: Roboto;
+    color: #364043;
+}
+
+.task{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    font-family: Roboto;
+    width: 100%;
+    height: 3vw;
+    border-radius: 17.5px;
+    font-size: 1.7vw;
+    margin-bottom: 2%;
+    padding-left: 3%;
+    background-color: #9AEDF2;
+    color: #676767;
+}
+
+#new-task{
+    vertical-align: middle;
+    line-height: 3vw;
+    width: 90%;
+}
+
+.addBtn{
+    height: 1.8em;
+    width: 30%;
+    margin-left: 30%;
+    border-radius: 30px;
+    font-size: 35px;
+    color: white;
+    background-color: #249EE3;
+    border: none;
+}
+
+.addBtn:hover{
+    background-color: #207eb5;
+}
+
+textarea::-webkit-scrollbar {
+    display: none;
+}
+
+.taskGiven{
+    background-color: orange;
+}
+
+.today{
+    background-color: purple;
+}
+
+.task-container{
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+}
+
+.calender-background{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 70vw;
+    height: 100vh;
+    background-color: #249EE3;
+}
+
+.calender-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 45vw;
+    width: 65%;
+    border-radius: 30px;
+    background-color: white;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    padding: 3% 1%;
+    font-family: Inter;
+    font-size: 1vw;
+}
+
+.month-year{
+    font-weight: 1000;    
+}
+
+.calender{
+    padding: 0vw;
+    padding-top: 0;    
+}
+
+ul.days {
+    list-style-type: none; 
+    margin: 0; 
+    display: flex; 
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding-right: 9%;
+    padding-left: 9%;
+    padding-bottom: 1%;
+    font-size: 1.5em;
+    font-family: Inter;
+    font-size: 1.5vw;
+    font-weight: 600;
+}
+
+ul.days li {
+    text-align: center;
+    box-sizing: border-box;
+    margin: 0 3%;
+}
+
+ol.date {
+    list-style-type: none; 
+    padding-top: 3%; 
+    margin: 0; 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 1% 4%;
+}
+
+ol.date li {
+    border: 1px solid #ddd;
+    width: 5.5vw;
+    height: 5.5vw;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ol.date li:hover{
+    background-color: #aaa;
+}
+
+.inactive {
+    color: #aaa;
+}
+
+@media (max-width: 1287px){
+    .todo-background{
+        width: 50vw;
+        height: 100vh;
+        background-color: #36DBE5;
+    }
+
+    .date-container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 0.25fr 1.75fr;
+        column-gap: 0.4vw;
+        margin-left: 45%;
+        margin-top: 50px;
+        color: #ffffff;
+        font-family: Roboto;
+        font-size: 144px;
+        font-weight: 400;    
+    }
+
+    .current-date{
+        grid-area: 1 / 1 / 3 / 2;
+        font-size: 8vw;
+    }
+
+    .current-month{
+        font-size: 3vw;
+        padding-top: 12%;
+        padding-bottom: 0%;
+    }
+
+    .current-year{
+        font-size: 3vw;
+        padding-top: 0;
+    }
+
+    .today-deadline-box{
+        padding-top: 7%;
+        padding-left: 5%;
+        color: #364043;
+    }
+
+    .upcoming-deadline-box{
+        padding-top: 15%;
+        padding-left: 5%;
+    }
+
+    .title{
+        padding-bottom: 2%;
+        font-size: 3vw;
+        font-family: Roboto;
+        color: #364043;
+    }
+
+    #new-task{
+        vertical-align: middle;
+        line-height: 5vw;
+        width: 82%;
+    }
+
+    .task{
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        font-family: Roboto;
+        width: 90%;
+        height: 5vw;
+        border-radius: 17.5px;
+        font-size: 3vw;
+        margin-bottom: 2%;
+        padding-left: 3%;
+        background-color: #9AEDF2;
+        color: #676767;
+    }
+
+    .task-container{
+        display: flex;
+        flex-wrap: wrap;
+        width: 90%;
+    }
+    
+    .calender-background{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        width: 50vw;
+        height: 100vh;
+        background-color: #249EE3;
+    }
+    
+    .calender-container{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        height: 55vw;
+        width: 90%;
+        border-radius: 30px;
+        background-color: white;
+    }
+    
+    .header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 90%;
+        padding: 1% 1%;
+        font-family: Inter;
+        font-size: 2vw;
+    }
+    
+    .month-year{
+        font-weight: 1000;    
+    }
+    
+    .calender{
+        padding: 0vw;
+        padding-top: 0;    
+    }
+    
+    ul.days {
+        list-style-type: none;
+        margin: 0; 
+        display: flex; 
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        padding: 0% 5%;
+        padding-bottom: 1%;
+        font-size: 2.5vw;
+        font-family: Inter;
+        font-weight: 600;
+    }
+    
+    ul.days li {
+        text-align: center;
+        box-sizing: border-box;
+        margin: 0 1%;
+    }
+    
+    ol.date {
+        list-style-type: none; 
+        padding-top: 3%; 
+        margin: 0; 
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 1% 4%;
+    }
+    
+    ol.date li {
+        border: 1px solid #ddd;
+        width: 5.5vw;
+        height: 5.5vw;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+
+@media (max-width: 700px){
+    .master-container{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .todo-background{
+        width: 100vw;
+        height: 50vh;
+        background-color: #36DBE5;
+    }
+    
+    .date-container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        column-gap: 1vw;
+        width: 30%;
+        margin-left: 55%;
+        margin-top: 30px;
+        color: #ffffff;
+        font-family: Roboto;
+        font-size: 144px;
+        font-weight: 400;
+    }
+    
+    .current-date{
+        grid-area: 1 / 1 / 3 / 2;
+        font-size: 15vw;
+    }
+    
+    .current-month{
+        font-size: 5vw;
+        padding-top: 25%;
+    }
+    
+    .current-year{
+        font-size: 5vw;
+        padding-top: 0;
+    }
+    
+    .today-deadline-box{
+        padding-top: 2%;
+        padding-left: 5%;
+    }
+    
+    .upcoming-deadline-box{
+        padding-top: 3%;
+        padding-left: 5%;
+    }
+    
+    .title{
+        font-size: 3.5vw;
+        font-family: Roboto;
+        color: #364043;
+    }
+
+    #new-task{
+        vertical-align: middle;
+        line-height: 5vw;
+        width: 55%; 
+    }
+
+    .addBtn{
+        height: 1.5em;
+        width: 15%;
+        margin-left: 20%;
+    }
+    
+    .task{
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        font-family: Roboto;
+        width: 60%;
+        height: 5vw;
+        border-radius: 17.5px;
+        font-size: 3vw;
+        margin-bottom: 2%;
+        padding-left: 3%;
+        background-color: #9AEDF2;
+        color: #676767;
+    }
+    
+    .calender-background{
+        width: 100vw;
+        height: 50vh;
+        background-color: #249EE3;
+    }
+    
+    .calender-container{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        height: 70vw;
+        width: 75%;
+        border-radius: 30px;
+        background-color: white;
+    }
+
+    .header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 90%;
+        font-family: Inter;
+        font-size: 2vw;
+        height: 5vh;
+        padding: 0 4vw;
+    }
+    
+    .calender{
+        padding: 0;
+        margin: 0;   
+    }
+
+    .month-year{
+        font-weight: 1000;    
+    }
+
+    ul.days {
+        list-style-type: none; 
+        padding: 0; 
+        margin: 0; 
+        display: flex; 
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        padding: 0% 10%;
+        padding-bottom: 1%;
+        font-size: 1.5em;
+        font-family: Inter;
+        font-size: 3vw;
+        font-weight: 600;
+    }
+
+
+    ul.days li {
+        text-align: center;
+        box-sizing: border-box;
+        margin: 0 1%;
+    }
+
+    ol.date {
+        list-style-type: none; 
+        padding-top: 3%; 
+        margin: 0; 
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 2% 8%;
+    }
+
+    ol.date li {
+        border: 1px solid #ddd;
+        width: 8.5vw;
+        height: 8.5vw;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: small
+    }
+}
+
+@media (max-width: 600px){
+    .calender-container{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        height: 75vw;
+        width: 75%;
+        border-radius: 30px;
+        background-color: white;
+    }
+
+    .header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 90%;
+        font-family: Inter;
+        font-size: 2vw;
+        height: 5vh;
+        padding: 0 4vw;
+    }
+    
+    .calender{
+        padding: 0;
+        margin: 0;   
+    }
+
+    .month-year{
+        font-weight: 1000;    
+    }
+
+    ul.days {
+        list-style-type: none; 
+        padding: 0; 
+        margin: 0; 
+        display: flex; 
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        padding: 0% 10%;
+        padding-bottom: 1%;
+        font-size: 1.5em;
+        font-family: Inter;
+        font-size: 3vw;
+        font-weight: 600;
+    }
+
+
+    ul.days li {
+        text-align: center;
+        box-sizing: border-box;
+        margin: 0 1%;
+    }
+
+    ol.date {
+        list-style-type: none; 
+        padding-top: 3%; 
+        margin: 0; 
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 2% 8%;
+    }
+
+    ol.date li {
+        border: 1px solid #ddd;
+        width: 8.5vw;
+        height: 8.5vw;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: small
+    }
+}
+
+@media (max-width: 500px) {
+    .master-container{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .todo-background{
+        width: 100vw;
+        height: 55vh;
+        background-color: #36DBE5;
+    }
+
+    .date-container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        column-gap: 0.4vw;
+        margin-left: 50%;
+        margin-top: 50px;
+        color: #ffffff;
+        font-family: Roboto;
+        font-size: 144px;
+        font-weight: 400;
+        
+    }
+
+    .current-date{
+        grid-area: 1 / 1 / 3 / 2;
+        font-size: 20vw;
+    }
+
+    .current-month{
+        font-size: 7vw;
+    }
+
+    .current-year{
+        font-size: 7vw;
+    }
+
+    .today-deadline-box{
+        padding-top: 5%;
+        padding-left: 5%;
+    }
+    
+    .upcoming-deadline-box{
+        padding-top: 7%;
+        padding-left: 5%;
+    }
+    
+    .title{
+        font-size: 5vw;
+        font-family: Roboto;
+        color: #364043;
+    }
+    
+    #new-task{
+        vertical-align: middle;
+        line-height: 8vw;
+        width: 72%; 
+    }
+    
+    .addBtn{
+        height: 1.5em;
+        width: 20%;
+        margin-left: 30%;
+    }
+    
+    .task{
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        font-family: Roboto;
+        width: 80%;
+        height: 8vw;
+        border-radius: 17.5px;
+        font-size: 5vw;
+        margin-bottom: 2%;
+        padding-left: 3%;
+        background-color: #9AEDF2;
+        color: #676767;
+    }
+
+    .calender-background{
+        width: 100vw;
+        height: 45vh;
+        background-color: #249EE3;
+    }
+    
+    .calender-container{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        height: 90vw;
+        width: 90%;
+        border-radius: 30px;
+        background-color: white;
+    }
+
+    .header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 90%;
+        font-family: Inter;
+        font-size: 3vw;
+        height: 8vh;
+        padding: 0 4vw;
+    }
+
+    .month-year{
+        font-weight: 1000;    
+    }
+
+    .calender{
+        padding: 3vw;
+        padding-top: 0;    
+    }
+
+    ul.days {
+        list-style-type: none; 
+        padding: 0; 
+        margin: 0; 
+        display: flex; 
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        padding: 0% 5%;
+        padding-bottom: 1%;
+        font-size: 1.5em;
+        font-family: Inter;
+        font-size: 3vw;
+        font-weight: 600;
+    }
+
+
+    ul.days li {
+        text-align: center;
+        box-sizing: border-box;
+        margin: 0 1%;
+    }
+
+    ol.date {
+        list-style-type: none; 
+        padding-top: 3%; 
+        margin: 0; 
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 1% 4%;
+    }
+
+    ol.date li {
+        border: 1px solid #ddd;
+        width: 10vw;
+        height: 10vw;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: small
+    }
+}
