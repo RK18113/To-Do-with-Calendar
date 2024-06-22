@@ -84,8 +84,9 @@ html, body {
 }
 
 .upcoming-deadline-box{
-    padding-top: 15%;
+    padding-top: 5%;
     padding-left: 5%;
+    height: 27vh;
 }
 
 .title{
@@ -147,6 +148,7 @@ textarea::-webkit-scrollbar {
     display: flex;
     flex-wrap: wrap;
     width: 90%;
+    height: 19vh;
 }
 
 .calender-background{
