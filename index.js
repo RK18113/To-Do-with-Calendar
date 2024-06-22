@@ -26,10 +26,6 @@ taskYear.innerText = `${date.getFullYear()}`;
 
 topMonthYear.innerText = `${months[date.getMonth()]} ${date.getFullYear()}`;
 
-newTask.addEventListener('click', (event) => {
-    event.target.value = '';
-});
-
 addBtn.addEventListener('click', () => {
     addTask(newTask.value.trim());
     newTask.value = '';
