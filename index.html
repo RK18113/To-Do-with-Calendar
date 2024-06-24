@@ -14,7 +14,7 @@
 </head>
 <body>
     <div class="master-container">
-        <div class="todo-background">
+        <div class="todo-background" style="overflow-y:auto;" >
             <div class="date-container">
                 <div class="current-date"></div>
                 <div class="current-month"></div>
@@ -24,8 +24,10 @@
             <div class="today-deadline-box">
                 <h3 class="today-title title">TODAY'S DEADLINES</h3>
                 <div class="task-container" style="overflow-y:auto;" ></div>
-                <textarea id="new-task" class="task" placeholder="New Task..."></textarea>
-                <button class="addBtn">+</button>
+                <div class="addNewTask-box">
+                    <textarea id="new-task" class="task" placeholder="New Task..."></textarea>
+                    <button class="addBtn">+</button>
+                </div>
             </div>
 
             <div class="upcoming-deadline-box">
