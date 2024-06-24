@@ -9,9 +9,9 @@ const newTask = document.querySelector('#new-task');
 const addBtn = document.querySelector('.addBtn');
 
 const taskObj = {
-    '6': '<span class="task">Complete frontend challenge</span> <span class="task">Complete UI/UX challenge</span>',
-    '7': '<span class="task">Do something</span> <span class="task">Finish personal project</span>'
-}
+    '6':    `<div class="todoTask-box"><div class="task todoTask" id="6">Complete frontend challenge</div> <button class="deleteBtn">Delete</button></div> <div class="todoTask-box"><div class="task todoTask" id="6">Complete UI/UX challenge </div> <button class="deleteBtn">Delete</button></div>`,
+    '7':    `<div class="todoTask-box"><div class="task todoTask" id="7">Do something</div> <button class="deleteBtn">Delete</button></div> <div class="todoTask-box"><div class="task todoTask" id="7">Finish personal project</div> <button class="deleteBtn">Delete</button></div>`
+};
 
 let date = new Date();
 let currYear = date.getFullYear();
@@ -29,7 +29,7 @@ topMonthYear.innerText = `${months[date.getMonth()]} ${date.getFullYear()}`;
 addBtn.addEventListener('click', () => {
     addTask(newTask.value.trim());
     newTask.value = '';
-})
+});
 
 newTask.addEventListener('keypress', (event) => {
     if (event.key === 'Enter') {
@@ -40,14 +40,17 @@ newTask.addEventListener('keypress', (event) => {
 });
 
 function addTask(task) {
+        
     let dateKey = taskDate.innerText;
-    let newTaskHtml = `<span class="task">${task}</span>`;
-
-    if (taskObj[dateKey]) {
-        taskObj[dateKey] += newTaskHtml;
-    } else {
-        taskObj[dateKey] = newTaskHtml;
-    }
+    let newTaskHtml = `<div class="todoTask-box"><div class="task todoTask" id="${dateKey}">${task}</div> <button class="deleteBtn" id="${dateKey}">Delete</button></div>`;
+    
+    if (task.trim() !== ''){
+        if (taskObj[dateKey]) {
+            taskObj[dateKey] += newTaskHtml;
+        } else {
+            taskObj[dateKey] = newTaskHtml;
+        }
+    }      
 
     displayTasks(dateKey);
 }
@@ -82,7 +85,7 @@ function renderCalendar() {
     dateTag.innerHTML = liTag;
 
     addDayClickEvents();
-    displayTasks();
+    displayTasks(date.getDate());
 }
 
 function addDayClickEvents() {
@@ -108,14 +111,30 @@ function displayTasks(selectedDate) {
     if (taskObj[selectedDate]) {
         taskCont.innerHTML = taskObj[selectedDate];
     } else {
-        taskCont.innerHTML = '<span class="task">No tasks for this date.</span>';
+        taskCont.innerHTML = '<div class="task">No tasks for this date.</div>';
     }
 
     if (taskObj[selectedDate + 1]) {
-        upcomingTaskCont.innerHTML = taskObj[selectedDate + 1];
+        let parser = new DOMParser();
+        let doc = parser.parseFromString(taskObj[selectedDate + 1], 'text/html');
+
+        doc.querySelectorAll('.deleteBtn').forEach(button => button.remove());
+
+        upcomingTaskCont.innerHTML = doc.body.innerHTML;
     } else {
-        upcomingTaskCont.innerHTML = '<span class="task">No Upcoming tasks.</span>';
+        upcomingTaskCont.innerHTML = '<div class="task">No Upcoming tasks.</div>';
     }
+
 }
+
+taskCont.addEventListener('click', (event) => {
+    if (event.target.classList.contains('deleteBtn')) {
+        const button = event.target;
+        let htmlString = taskObj[taskDate.innerText].replace(button.parentElement.outerHTML, '');
+        taskObj[taskDate.innerText] = htmlString;
+        taskCont.innerHTML = taskObj[taskDate.innerText];
+        console.log(taskObj[taskDate.innerText]);
+    }
+});
 
 renderCalendar();
